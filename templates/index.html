@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Nearest Clinic</title>
+</head>
+<body>
+    <h1>Find the Nearest Clinic</h1>
+
+    <form method="POST">
+        <label for="address">Enter the patient's address or postal code:</label>
+        <input type="text" id="address" name="address" required>
+        <button type="submit">Find Clinic</button>
+    </form>
+
+    {% if clinic %}
+        <h2>The closest clinic is:</h2>
+        <p>{{ clinic }}</p>
+        <p>Distance: {{ distance }}</p>
+    {% elif error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
