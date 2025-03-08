@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find the Nearest Clinic</title>
+    <title>Find the Closest Clinic</title>
 </head>
 <body>
-    <h1>Find the Nearest Clinic</h1>
+    <h1>Find the Closest Clinic</h1>
 
     <form method="POST">
-        <label for="address">Enter the patient's address or postal code:</label>
+        <label for="address">Enter your address:</label>
         <input type="text" id="address" name="address" required>
         <button type="submit">Find Clinic</button>
     </form>
 
     {% if clinic %}
-        <h2>The closest clinic is:</h2>
+        <p>The closest clinic is:</p>
         <p>{{ clinic }}</p>
-        <p>Distance: {{ distance }}</p>
+        <p>Distance: {{ distance }} miles</p>
     {% elif error %}
-        <p style="color: red;">{{ error }}</p>
+        <p>{{ error }}</p>
     {% endif %}
 </body>
 </html>
